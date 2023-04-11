@@ -1,0 +1,24 @@
+<form (ngSubmit)="filter()">
+    <label for="name">Nombre</label>
+    <input 
+        type="text" 
+        class="form-control" 
+        [(ngModel)]="filterName" 
+        name="name" 
+        id="name"
+        placeholder="Escribe un nombre...">
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+    </tr>
+    <tr *ngFor="let person of peopleFiltered">
+        <td>{{person.name}}</td>
+        <td>{{person.surname}}</td>
+        <td>{{person.age}}</td>
+    </tr>
+</table>
